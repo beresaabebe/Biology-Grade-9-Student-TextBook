@@ -1,4 +1,4 @@
-package com.beckytech.biologygrade9studenttextbook;
+package com.beckytech.biologygrade9studenttextbook.adapter;
 
 import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.beckytech.biologygrade9studenttextbook.model.ModelViewPager;
+import com.beckytech.biologygrade9studenttextbook.R;
 
 import java.util.List;
 

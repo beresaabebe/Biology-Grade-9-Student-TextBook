@@ -1,4 +1,4 @@
-package com.beckytech.biologygrade9studenttextbook;
+package com.beckytech.biologygrade9studenttextbook.model;
 
 public class ModelViewPager {
     private final String title;

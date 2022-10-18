@@ -1,4 +1,4 @@
-package com.beckytech.biologygrade9studenttextbook;
+package com.beckytech.biologygrade9studenttextbook.contents;
 
 public class ViewPagerLink {
     public String[] link = {
