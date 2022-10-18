@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "515295292022",
+    "project_id": "biology-g9-student-textbook",
+    "storage_bucket": "biology-g9-student-textbook.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515295292022:android:efa3fa67dfd559cc0ccd57",
+        "android_client_info": {
+          "package_name": "com.beckytech.biologygrade9studenttextbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515295292022-pa7eagpj6ggprrqn4tjgp8q8mqcsvpan.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOxtNCAXl-TtQVkeEmAKv-VN4kJTpIQbo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "515295292022-pa7eagpj6ggprrqn4tjgp8q8mqcsvpan.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
