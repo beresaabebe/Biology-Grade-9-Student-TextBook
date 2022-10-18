@@ -66,12 +66,13 @@ public class BookDetailActivity extends AppCompatActivity {
             array[j] = list.get(j);
         }
 
-        pdfView.fromAsset("ce10.pdf")
+        pdfView.fromAsset("bio9.pdf")
                 .pages(array)
                 .enableSwipe(true)
                 .swipeHorizontal(false)
                 .spacing(10)
                 .enableDoubletap(true)
+                .fitEachPage(true)
                 .scrollHandle(new DefaultScrollHandle(this))
                 .load();
     }

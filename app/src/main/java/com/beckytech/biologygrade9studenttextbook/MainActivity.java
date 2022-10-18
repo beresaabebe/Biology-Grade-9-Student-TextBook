@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.beckytech.biologygrade9studenttextbook.activity.AboutActivity;
 import com.beckytech.biologygrade9studenttextbook.activity.BookDetailActivity;
@@ -40,7 +41,7 @@ import com.google.android.material.navigation.NavigationView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements Adapter.onBookClicked {
+public class MainActivity extends AppCompatActivity implements Adapter.onBookClicked, ViewPagerAdapter.viewPagerClickListener {
 
     private InterstitialAd mInterstitialAd;
     private final List<Model> list = new ArrayList<>();
@@ -48,6 +49,10 @@ public class MainActivity extends AppCompatActivity implements Adapter.onBookCli
     private final TitleContents titleContents = new TitleContents();
     private final ContentEndPage endPage = new ContentEndPage();
     private final SubTitleContents subTitleContents = new SubTitleContents();
+
+    private List<ModelViewPager> modelViewPagers;
+    private final ViewPagerTitle viewPagerTitle = new ViewPagerTitle();
+    private final ViewPagerLink viewPagerLink = new ViewPagerLink();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +89,18 @@ public class MainActivity extends AppCompatActivity implements Adapter.onBookCli
         Adapter adapter = new Adapter(list, this);
         recyclerView.setAdapter(adapter);
 
+        ViewPager2 viewPager2 = findViewById(R.id.viewPager);
+        getViewPagerData();
+        ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(modelViewPagers, this);
+        viewPager2.setAdapter(pagerAdapter);
+    }
+
+    private void getViewPagerData() {
+        modelViewPagers = new ArrayList<>();
+        for (int i = 0; i < viewPagerTitle.title.length; i++) {
+            modelViewPagers.add(new ModelViewPager(viewPagerTitle.title[i].substring(0,1).toUpperCase()+""+viewPagerTitle.title[i].substring(1).toLowerCase(),
+                    viewPagerLink.link[i],R.drawable.icon));
+        }
     }
 
     private void getData() {
@@ -257,5 +274,12 @@ public class MainActivity extends AppCompatActivity implements Adapter.onBookCli
                         mInterstitialAd = null;
                     }
                 });
+    }
+
+    @Override
+    public void itemClicked(ModelViewPager modelViewPager) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(modelViewPager.getLink()));
+        startActivity(intent);
     }
 }
